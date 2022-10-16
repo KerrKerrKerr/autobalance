@@ -28,7 +28,8 @@ def main(input):
                     a = a.replace(a[0], '', 1)
                 else:
                     if len(e2)==0:
-                        e2='1'
+                        e2=1
+                    e2=int(e2)
                     break
             kex.pop(0)
             e1.append(e2)
