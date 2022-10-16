@@ -1,10 +1,11 @@
+#from dfg import main
 n = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 def main(input):
     input = input.split('=>')
     i1, i2 = input[0], input[1]
     i1, i2 = i1.split('+'), i2.split('+')
-
+    i1_2=i1
     def k_delete(kdl):
         l1 = []
         while len(kdl) > 0:
@@ -35,8 +36,9 @@ def main(input):
             e1.append(e2)
         return e1
 
-    print(k_delete(i2))
-    print(k_extract(i1))
-
+    koefs=k_extract(i1)
+    for t in koefs:
+        for t in range(10):
+            print('aaaa',t)
 
 main(input(str()))
