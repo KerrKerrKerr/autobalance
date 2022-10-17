@@ -43,24 +43,25 @@ def main(input):
     input = input.split('=>')
     i1, i2 = input[0], input[1]
     i1, i2 = i1.split('+'), i2.split('+')
-    i1_2=i1
-    def k_delete(kdl):
+    i1_2=i1.copy()
+    def k_delete(y):
         l1 = []
-        while len(kdl) > 0:
-            a = kdl[0]
+        while len(y) > 0:
+            a = y[0]
             while len(a) > 0:
                 if a[0] in n:
                     a = a.replace(a[0], '', 1)
                 else:
                     l1.append(a)
                     break
-            kdl.pop(0)
+            y.pop(0)
         return l1
     def k_extract(kex):
         e1= []
-        while len(kex) > 0:
+        u=kex
+        while len(u) > 0:
             e2=''
-            a = kex[0]
+            a = u[0]
             while len(a) >= 1:
                 if a[0] in n:
                     e2=e2+str(a[0])
@@ -70,20 +71,20 @@ def main(input):
                         e2=1
                     e2=int(e2)
                     break
-            kex.pop(0)
+            u.pop(0)
             e1.append(e2)
         print(e1)
         return e1
 
-    koefs,xrenb=k_extract(i1),k_delete(i1)
-    print(koefs)
-
+    print(i1)
     def assemble(l1,l2):
-        str=''
+        st=''
         while len(l1)>0 and len(l2)>0:
-            str=str+str(l1[0])+str(l2[0])
+            st=st+str(l1[0])+str(l2[0])
+            if len(l1)>=2:
+                st=st+'+'
             l1.pop(0),l2.pop(0)
-        return str
-    print(assemble(koefs,xrenb))
-
+        return st
+    print(assemble(k_extract(i1),k_delete(i1_2)))
+    print(i1_2)
 main(str(input()))
