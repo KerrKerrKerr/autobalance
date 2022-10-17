@@ -75,10 +75,15 @@ def main(input):
         print(e1)
         return e1
 
-    koefs=k_extract(i1)
+    koefs,xrenb=k_extract(i1),k_delete(i1)
     print(koefs)
-    for t in koefs:
-        for t in range(10):
-            print('aaaa',t)
+
+    def assemble(l1,l2):
+        str=''
+        while len(l1)>0 and len(l2)>0:
+            str=str+str(l1[0])+str(l2[0])
+            l1.pop(0),l2.pop(0)
+        return str
+    print(assemble(koefs,xrenb))
 
 main(str(input()))
