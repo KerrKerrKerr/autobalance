@@ -39,30 +39,6 @@ def second_check(x):
         x.pop(0)
     return d
 
-
-x=str(input())
-x=x.split('=>')
-x1,x2=x[0],x[1]
-x1,x2=x1.split('+'),x2.split('+')
-def smt(x):
-    d=[]
-    p1=[]
-    while len(x)!=0:
-        x0=x[0]
-        if x0[0] not in n:
-            p=[1]
-        else:
-            p=[]
-            while len(x0)!=0:
-                if x0[0]in n:
-                    p.append(str(x0[0]))
-                    x0=x0[1:len(x0)]
-                else:
-                    p1.append(p[0:len(p)])
-                    break
-        d.append(x0)
-        x.pop(0)
-
 def main(input):
     input = input.split('=>')
     i1, i2 = input[0], input[1]
@@ -96,11 +72,13 @@ def main(input):
                     break
             kex.pop(0)
             e1.append(e2)
+        print(e1)
         return e1
 
     koefs=k_extract(i1)
+    print(koefs)
     for t in koefs:
         for t in range(10):
             print('aaaa',t)
 
-main(input(str()))
+main(str(input()))
