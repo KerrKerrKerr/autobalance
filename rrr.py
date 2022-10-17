@@ -40,6 +40,15 @@ def second_check(x):
     return d
 
 def main(input):
+    def assemble(l1,l2):
+        st=''
+        while len(l1)>0 and len(l2)>0:
+            st=st+str(l1[0])+str(l2[0])
+            if len(l1)>=2:
+                st=st+'+'
+            l1.pop(0),l2.pop(0)
+        return st
+    print(assemble(k_extract(i1),k_delete(i1_2)))
     input = input.split('=>')
     i1, i2 = input[0], input[1]
     i1, i2 = i1.split('+'), i2.split('+')
@@ -76,15 +85,5 @@ def main(input):
         print(e1)
         return e1
 
-    print(i1)
-    def assemble(l1,l2):
-        st=''
-        while len(l1)>0 and len(l2)>0:
-            st=st+str(l1[0])+str(l2[0])
-            if len(l1)>=2:
-                st=st+'+'
-            l1.pop(0),l2.pop(0)
-        return st
-    print(assemble(k_extract(i1),k_delete(i1_2)))
-    print(i1_2)
+    
 main(str(input()))
