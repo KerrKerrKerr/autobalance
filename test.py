@@ -1,6 +1,4 @@
-from re import A
-
-
-from itertools import combinations_with_replacement
-for i in combinations_with_replacement([1, 1, 213], 2):
-    print(i)
+from itertools import combinations
+x=['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+for t in range(100):
+    print(combinations(x,8))
