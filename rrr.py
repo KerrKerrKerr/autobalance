@@ -85,7 +85,7 @@ def main(input):
         print(e1)
         return e1
     
-    print(k_delete)
+    print(k_delete(i1))
 """     print(assemble(k_extract(i1),k_delete(i1_2))) """
 
     

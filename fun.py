@@ -1,5 +1,5 @@
 n = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-nn=[0,1,2,3,4,5,6,7,8,9]
+nn=[1,2,3,4,5,6,7,8,9]
 list2 = [0,"H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl",'Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe']  
 def assemble(l1,l2):
     st=''
@@ -31,6 +31,7 @@ def k_extract(kex):
     return e1
 
 def k_delete(y):
+    print(y,'sdfsfs')
     l1 = []
     while len(y) > 0:
         a = y[0]
@@ -80,8 +81,8 @@ def second_check(x):
                 except:
                     d[a[0]]=int(a[2]+a[3])
         x.pop(0)
+    print(d)
     return d
-
 
 def smt(x):
     d=[]
@@ -104,6 +105,10 @@ def smt(x):
 
     return p1
 
+def new(inp):
+    inp.split('=>')
+    i1, i2 = inp[0], inp[1]
+    i1, i2 = i1.split('+'), i2.split('+')
 
 def el(y):     #ищeм количество элементов
     moles=[]
