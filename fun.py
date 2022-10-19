@@ -1,7 +1,7 @@
 n = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 nn=[1,2,3,4,5,6,7,8,9]
 list2 = [0,"H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl",'Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe']  
-def assemble(l1,l2):
+def assemble(l1,l2): #первый список коэфы. второй вещества после k_delete
     st=''
     while len(l1)>0 and len(l2)>0:
         st=st+str(l1[0])+str(l2[0])
@@ -10,7 +10,7 @@ def assemble(l1,l2):
         l1.pop(0),l2.pop(0)
     return st
 
-def k_extract(kex):
+def k_extract(kex): #зачем-то парился над функцией чтобы ни разу не вызвать... по аналогии k_delete только в выходе одни коэфы
     e1= []
     u=kex
     while len(u) > 0:
@@ -30,8 +30,7 @@ def k_extract(kex):
     print(e1)
     return e1
 
-def k_delete(y):
-    print(y,'sdfsfs')
+def k_delete(y): #на ввод список ОБЩИЙ без лишнего, на выходе список без коэфициентов
     l1 = []
     while len(y) > 0:
         a = y[0]
@@ -44,7 +43,7 @@ def k_delete(y):
         y.pop(0)
     return l1
 
-def second_check(x):
+def second_check(x): #на ввод список с одной из сторон уравнения, на вывод словарь с учетом уоэфициентов
     n=['0','1','2','3','4','5','6','7','8','9']
     d={}
     x=el(x)
@@ -84,7 +83,7 @@ def second_check(x):
     print(d)
     return d
 
-def smt(x):
+def smt(x): #не знаю что это но это было в файле и нигде не вызывалось
     d=[]
     p1=[]
     while len(x)!=0:
@@ -105,12 +104,12 @@ def smt(x):
 
     return p1
 
-def new(inp):
+def new(inp): #я не знаю что это
     inp.split('=>')
     i1, i2 = inp[0], inp[1]
     i1, i2 = i1.split('+'), i2.split('+')
 
-def el(y):     #ищeм количество элементов
+def el(y):     #ищeм количество элементов, нужна чтобы second_check работал
     moles=[]
     while len(y)>0:
         x=y[0]
