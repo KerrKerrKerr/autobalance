@@ -1,13 +1,18 @@
 n = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 nn=[1,2,3,4,5,6,7,8,9]
 list2 = [0,"H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl",'Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe']  
-def assemble(l1,l2): #первый список коэфы. второй вещества после k_delete
+def assemble(l11,l21): #первый список коэфы. второй вещества после k_delete
+    l1,l2=l11.copy(),l21.copy()
     st=''
     while len(l1)>0 and len(l2)>0:
-        st=st+str(l1[0])+str(l2[0])
-        if len(l1)>=2:
-            st=st+'+'
-        l1.pop(0),l2.pop(0)
+        if l2[0]=='=>':
+            st=st+'=>'
+            l2.pop(0)
+        elif l2[0]!='=>':
+            st=st+str(l1[0])+str(l2[0])
+            if len(l1)>=2 and l2[1]!='=>':
+                st=st+'+'
+            l1.pop(0),l2.pop(0)
     return st
 
 def k_extract(kex): #зачем-то парился над функцией чтобы ни разу не вызвать... по аналогии k_delete только в выходе одни коэфы
@@ -30,12 +35,16 @@ def k_extract(kex): #зачем-то парился над функцией чт
     print(e1)
     return e1
 
-def k_delete(y): #на ввод список ОБЩИЙ без лишнего, на выходе список без коэфициентов
+def k_delete(y1): #на ввод список ОБЩИЙ без лишнего, на выходе список без коэфициентов
+    y=y1.copy()
     l1 = []
     while len(y) > 0:
         a = y[0]
         while len(a) > 0:
-            if a[0] in n:
+            if a[0]=='=':
+                l1.append('=>')
+                break
+            elif a[0] in n:
                 a = a.replace(a[0], '', 1)
             else:
                 l1.append(a)
@@ -108,8 +117,17 @@ def new(inp): #я не знаю что это
     inp.split('=>')
     i1, i2 = inp[0], inp[1]
     i1, i2 = i1.split('+'), i2.split('+')
+    if second_check(i1.copy())==second_check(i2.copy()):
+        print('found one')
 
-def el(y):     #ищeм количество элементов, нужна чтобы second_check работал
+def smt_new(x): #на ввод список с двумя половинами уравнения для введения равно в список
+    j=((x[0]).split('+'))+['=>']+((x[1]).split('+'))
+    return(j)
+
+""" def smt_important(x): """
+
+def el(y1):     #ищeм количество элементов, нужна чтобы second_check работал
+    y=y1.copy()
     moles=[]
     while len(y)>0:
         x=y[0]
