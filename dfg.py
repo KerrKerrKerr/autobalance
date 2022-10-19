@@ -15,11 +15,11 @@ def main(x):
             if x[0] in n and x[1] in n:
                 x="".join(x)
                 koef=x[0:2]
-                x=x.replace(koef,'')
+                x=x.replace(koef,'',1)
                 koef=int(koef)
             if x[0] in n and x[1] not in n:
                 koef=x[0]
-                x=x.replace(koef,'')
+                x=x.replace(koef,'',1)
                 koef=int(koef)
             if len(x)!=0:
                 x="".join(x)
@@ -108,42 +108,3 @@ def main(x):
         return 1
     else:
         return 0
-
-x=str(input())
-x=x.split('=>')
-x1,x2=x[0],x[1]
-x1,x2=x1.split('+'),x2.split('+')
-def smt(x):
-    d=[]
-    p1=[]
-    while len(x)!=0:
-        x0=x[0]
-        if x0[0] not in n:
-            p=[1]
-        else:
-            p=[]
-            while len(x0)!=0:
-                if x0[0]in n:
-                    p.append(str(x0[0]))
-                    x0=x0[1:len(x0)]
-                else:
-                    p1.append(p[0:len(p)])
-                    break
-        d.append(x0)
-        x.pop(0)
-
-    return p1
-print(smt(x1))
-print(smt(x1))
-
-""" def assemble(x):
-    a = str(x)
-    a=a.replace('{','')
-    a=a.replace('}','')
-    a=a.replace(' ','')
-    a=a.replace("'",'')
-    a=a.replace(":",'')
-    a=a.split(',')
-    return a
-print(assemble(y1))      """   
-

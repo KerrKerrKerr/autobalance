@@ -1,5 +1,6 @@
-#from dfg import main
+from itertools import combinations
 n = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+nn=[0,1,2,3,4,5,6,7,8,9]
 list2 = [0,"H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl",'Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe']  
 def second_check(x):
     d={}
@@ -48,7 +49,6 @@ def main(input):
                 st=st+'+'
             l1.pop(0),l2.pop(0)
         return st
-    print(assemble(k_extract(i1),k_delete(i1_2)))
     input = input.split('=>')
     i1, i2 = input[0], input[1]
     i1, i2 = i1.split('+'), i2.split('+')
@@ -84,6 +84,9 @@ def main(input):
             e1.append(e2)
         print(e1)
         return e1
+    
+    print(k_delete)
+"""     print(assemble(k_extract(i1),k_delete(i1_2))) """
 
     
 main(str(input()))
