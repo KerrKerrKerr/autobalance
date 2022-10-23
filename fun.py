@@ -124,7 +124,23 @@ def smt_new(x): #на ввод список с двумя половинами �
     j=((x[0]).split('+'))+['=>']+((x[1]).split('+'))
     return(j)
 
-""" def smt_important(x): """
+def p(lst):
+    def p(o):
+        return sum(o)
+
+    r_list=[]
+    for i in range(len(lst)-4):
+        lst[0]=list(lst[0])
+        for l in range(len(lst[0])):
+            lst[0].append((lst[0])[0])
+            lst[0].pop(0)
+            r_list.append(lst[0].copy())
+        lst.pop(0)
+    r_list.sort(key=p)
+    return r_list
+
+
+
 
 def el(y1):     #ищeм количество элементов, нужна чтобы second_check работал
     y=y1.copy()
