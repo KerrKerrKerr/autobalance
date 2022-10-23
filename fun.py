@@ -129,7 +129,7 @@ def p(lst):
         return sum(o)
 
     r_list=[]
-    for i in range(len(lst)-4):
+    for i in range(len(lst)):
         lst[0]=list(lst[0])
         for l in range(len(lst[0])):
             lst[0].append((lst[0])[0])
