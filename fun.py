@@ -1,5 +1,5 @@
 n = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-nn=[1,2,3,4,5,6,7,8,9]
+nn=[i for i in range(1,7)]
 list2 = [0,"H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl",'Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe']  
 def assemble(l11,l21): #первый список коэфы. второй вещества после k_delete
     l1,l2=l11.copy(),l21.copy()
@@ -89,7 +89,6 @@ def second_check(x): #на ввод список с одной из сторон
                 except:
                     d[a[0]]=int(a[2]+a[3])
         x.pop(0)
-    print(d)
     return d
 
 def smt(x): #не знаю что это но это было в файле и нигде не вызывалось
@@ -127,14 +126,15 @@ def smt_new(x): #на ввод список с двумя половинами �
 def p(lst):
     def p(o):
         return sum(o)
-
-    r_list=[]
+    print((lst[0]).count((lst[0])[0]))
+    r_list=[[1]*len(lst[0])]
     for i in range(len(lst)):
-        lst[0]=list(lst[0])
-        for l in range(len(lst[0])):
-            lst[0].append((lst[0])[0])
-            lst[0].pop(0)
-            r_list.append(lst[0].copy())
+        if (lst[0]).count((lst[0])[0])!=len(lst[0]):
+            lst[0]=list(lst[0])
+            for l in range(len(lst[0])):
+                lst[0].append((lst[0])[0])
+                lst[0].pop(0)
+                r_list.append(lst[0].copy())
         lst.pop(0)
     r_list.sort(key=p)
     return r_list
