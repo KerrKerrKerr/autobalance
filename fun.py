@@ -91,28 +91,6 @@ def second_check(x): #на ввод список с одной из сторон
         x.pop(0)
     return d
 
-def smt(x): #не знаю что это но это было в файле и нигде не вызывалось
-    d=[]
-    p1=[]
-    while len(x)!=0:
-        x0=x[0]
-        if x0[0] not in n:
-            p=[1]
-        else:
-            p=[]
-            while len(x0)!=0:
-                if x0[0]in n:
-                    p.append(str(x0[0]))
-                    x0=x0[1:len(x0)]
-                else:
-                    p1.append(p[0:len(p)])
-                    break
-        d.append(x0)
-        x.pop(0)
-
-    return p1
-
-def new(inp): #я не знаю что это
     inp.split('=>')
     i1, i2 = inp[0], inp[1]
     i1, i2 = i1.split('+'), i2.split('+')
@@ -122,25 +100,6 @@ def new(inp): #я не знаю что это
 def smt_new(x): #на ввод список с двумя половинами уравнения для введения равно в список
     j=((x[0]).split('+'))+['=>']+((x[1]).split('+'))
     return(j)
-
-def p(lst):
-    def p(o):
-        return sum(o)
-    print((lst[0]).count((lst[0])[0]))
-    r_list=[[1]*len(lst[0])]
-    for i in range(len(lst)):
-        if (lst[0]).count((lst[0])[0])!=len(lst[0]):
-            lst[0]=list(lst[0])
-            for l in range(len(lst[0])):
-                lst[0].append((lst[0])[0])
-                lst[0].pop(0)
-                r_list.append(lst[0].copy())
-        lst.pop(0)
-    r_list.sort(key=p)
-    return r_list
-
-
-
 
 def el(y1):     #ищeм количество элементов, нужна чтобы second_check работал
     y=y1.copy()

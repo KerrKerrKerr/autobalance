@@ -1,10 +1,8 @@
 from fun import *
-from itertools import combinations_with_replacement
-from test2 import p_
+from itertools import product
 inp=str(input())
 inp = inp.split('=>')
-w=list(combinations_with_replacement(nn,len(('+'.join(inp).split('+')))))
-w=p_(w)
+w=list(product(nn,repeat=len(('+'.join(inp).split('+')))))
 i1, i2 = inp[0], inp[1]
 i1_2, i2_2 = i1.split('+'), i2.split('+')
 for i in range(len(w)):
