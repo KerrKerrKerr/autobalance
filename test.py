@@ -1,5 +1,10 @@
-from fun import *
-from itertools import combinations_with_replacement
-w=list(combinations_with_replacement(nn,4))
-print(p(w))
+n=[i for i in range(0,10)]
 
+def perf(inp):
+    inp=inp.copy()
+    if inp[0] in n:
+        k=0
+        while inp[0]in n:
+            k+=inp[0]
+            inp=inp.replace(inp[0],'',1)
+    
