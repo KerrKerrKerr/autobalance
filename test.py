@@ -1,10 +1,5 @@
-n=[i for i in range(0,10)]
-
-def perf(inp):
-    inp=inp.copy()
-    if inp[0] in n:
-        k=0
-        while inp[0]in n:
-            k+=inp[0]
-            inp=inp.replace(inp[0],'',1)
-    
+from itertools import product
+from fun import *
+inp = ['Si','2Cl2','SiCl4']
+w=list(product(nn,repeat=8))
+print(len(w))

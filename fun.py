@@ -1,5 +1,5 @@
-n = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-nn=[i for i in range(1,7)]
+n = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9')
+nn=[i for i in range(1,15)]
 list2 = [0,"H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl",'Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe']  
 def assemble(l11,l21): #первый список коэфы. второй вещества после k_delete
     l1,l2=l11.copy(),l21.copy()
@@ -64,7 +64,7 @@ def second_check(x): #на ввод список с одной из сторон
             except:
                 d[a]=1
         else:
-            a=a+' '
+            a=a+'   '
             a=list(a)
             if a[1]not in n:
                 a[0]=a[0]+a[1]
